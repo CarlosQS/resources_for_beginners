@@ -498,3 +498,266 @@ Union of sets:
 ```python
 print(numbers.union(evens))  # {1, 2, 3, 4, 6}
 ```
+
+# Control Structures in Python
+
+Control structures are fundamental in any programming language, as they allow decisions to be made and different blocks of code to be executed depending on specific conditions. Python includes conditional structures and loops that cover most needs.
+
+## Conditionals: if, elif, else
+
+### What are conditionals?
+Conditionals allow a program to make decisions based on certain conditions. If the condition is true, a block of code is executed; otherwise, other conditions are evaluated or an alternative block is executed.
+
+### Basic Syntax
+```python
+if condition:
+    # Code if the condition is true
+elif another_condition:
+    # Code if the other condition is true
+else:
+    # Code if no previous condition is true
+```
+What are conditionals for?
+
+Making decisions based on values (age, permissions, states)
+Executing different parts of the program based on user input
+
+Basic Example
+
+```python
+age = 20
+
+if age >= 18:
+    print("You are an adult")
+elif age < 0:
+    print("Invalid age")
+else:
+    print("You are a minor")
+```
+Common operators in conditionals
+
+Comparison:
+
+- Equality: ==
+- Inequality: !=
+- Greater/lesser: >, <, >=, <=
+
+Logical:
+- and: All conditions must be true
+- or: At least one condition must be true
+- not: Inverts the logical value
+  
+Example with logical operators
+
+```python
+is_student = True
+has_scholarship = False
+
+if is_student and not has_scholarship:
+    print("You must apply for a scholarship")
+```
+## Loops: for and while
+
+What are loops?
+
+A loop allows a block of code to be executed multiple times. It is used when you need to process a list of items, repeat an action a certain number of times, or continue until a condition is met
+
+1. For Loop
+The for loop iterates over elements of a collection such as lists, strings, or ranges.
+
+What is it for?
+Iterating over each element of a list, tuple, string, etc
+Repetitive data processing
+
+Basic Syntax
+
+```python
+for item in collection:
+    # Code that runs on each iteration
+```
+Example with a list
+
+```python
+fruits = ["apple", "pear", "cherry"]
+for fruit in fruits:
+    print("I like", fruit)
+Using the range() function
+```
+range() generates a sequence of numbers that you can use in a loop
+
+```python
+for i in range(5):
+    print("Iteration:", i)
+```
+Iterating with indexes
+If you need the indexes of elements:
+
+```python
+fruits = ["apple", "pear", "cherry"]
+for i, fruit in enumerate(fruits):
+    print(f"Index {i}: {fruit}")
+```
+2. While Loop
+The while loop repeats a block of code as long as a condition is true.
+
+What is it for?
+Running a process until a condition is met
+Using external variables to control the repetition
+
+Basic Syntax
+
+```python
+while condition:
+    # Code that runs as long as the condition is true
+```
+  - Basic Example
+
+```python
+counter = 0
+while counter < 5:
+    print("Counter:", counter)
+    counter += 1
+```
+Caution with while loops
+A while loop can go into an infinite loop if the condition never becomes false. For example:
+
+```python
+while True:
+    print("This never ends...")  # Avoid this!
+```
+- Loop Control
+  - Break statement: Stops the current loop execution
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)  # It will only print up to 4
+```
+continue statement: Skips the current iteration and moves to the next.
+
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)  # It will skip 2
+```
+else with loops: You can add an else block that runs if the loop ends without using break
+
+```python
+for i in range(3):
+    print(i)
+else:
+    print("The loop finished successfully")
+```
+Functions in Python
+
+What is a function?
+
+A function is a reusable block of code that performs a specific task. It helps organize and modularize the program
+
+Why use functions?
+
+- Reusability: Reduces code repetition
+- Readability: Makes the program easier to understand by grouping related operations.
+- Modularity: Divides the program into smaller, manageable parts.
+How to define a function
+
+```python
+def function_name(optional_parameters):
+    # Block of code
+    return optional_result
+```
+
+  - Basic Example
+
+```python
+def greet(name):
+    return f"Hello, {name}"
+
+print(greet("Carlos"))  # Hello, Carlos
+```
+Functions without parameters
+
+If the function doesn't need input:
+
+```python
+def welcome_message():
+    print("Welcome to Python")
+
+welcome_message()
+```
+Functions with multiple parameters
+
+You can pass as many parameters as needed:
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # 8
+```
+Functions with default values
+Parameters can have default values:
+
+```python
+def greet(name="guest"):
+    print(f"Hello, {name}")
+
+greet()  # Hello, guest
+greet("Ana")  # Hello, Ana
+```
+Arguments and *args
+If you don't know how many arguments to pass, use *args:
+
+```python
+def sum_all(*numbers):
+    return sum(numbers)
+
+print(sum_all(1, 2, 3, 4))  # 10
+```
+Keyword arguments and **kwargs
+
+If you need named arguments dynamically, use **kwargs:
+
+```python
+def show_data(**data):
+    for key, value in data.items():
+        print(f"{key}: {value}")
+
+show_data(name="Carlos", age=30)  
+# Output:
+# name: Carlos
+# age: 30
+```
+Anonymous functions: lambda
+
+These are small functions that don't need a name:
+
+```python
+double = lambda x: x * 2
+print(double(5))  # 10
+```
+
+## Practice Challenges
+- Write a program that calculates the multiplication table of a number entered by the user
+- Create a function that determines if a number is prime
+- Implement a program that uses a dictionary to count the words in a text
+
+
+
+
+
+# Legal Notice
+
+This content is created and owned by Carlos Quiñones Soriano. It is strictly prohibited to distribute, share, or reproduce any part of this material without the explicit consent of the creator. 
+
+This work is intended solely for educational purposes. Any commercial use, reproduction, or distribution without permission from the creator is a violation of intellectual property laws and may result in legal consequences.
+
+By accessing this content, you agree to adhere to the following conditions:
+- This material is for personal, educational use only.
+- You may not share, reproduce, or distribute any part of this content without proper authorization.
+- Any unauthorized use of this work may lead to legal action under applicable intellectual property laws.
+
+Thank you for respecting the creator's rights and using this content responsibly.
